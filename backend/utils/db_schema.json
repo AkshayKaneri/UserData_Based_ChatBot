@@ -1,0 +1,61 @@
+{
+  "appointments": [
+    "appointment_id",
+    "patient_id",
+    "doctor_id",
+    "appointment_date",
+    "status",
+    "notes",
+    "created_at"
+  ],
+  "audit_logs": [
+    "user_id",
+    "log_id",
+    "action",
+    "details",
+    "timestamp"
+  ],
+  "chat_messages": [
+    "message_id",
+    "patient_id",
+    "sender",
+    "message",
+    "timestamp"
+  ],
+  "lab_reports": [
+    "report_id",
+    "patient_id",
+    "test_name",
+    "test_result",
+    "test_date",
+    "created_at"
+  ],
+  "patients": [
+    "patient_id",
+    "name",
+    "dob",
+    "gender",
+    "admitted_at"
+  ],
+  "treatments": [
+    "patient_id",
+    "treatment_id",
+    "treatment_type",
+    "treatment_details",
+    "assigned_doctor",
+    "status",
+    "created_at"
+  ],
+  "user_roles": [
+    "role_id",
+    "role_name",
+    "permissions"
+  ],
+  "users": [
+    "user_id",
+    "email",
+    "password",
+    "role",
+    "created_at"
+  ]
+}
