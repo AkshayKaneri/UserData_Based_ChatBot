@@ -1,0 +1,23 @@
+<div class="chat-tooltip" (click)="toggleChat()" matTooltip="Ask AI Assistant">
+    💬
+</div>
+
+<div class="chat-container" *ngIf="isOpen">
+    <div class="chat-header">
+        Med Assist
+        <span class="close-btn" (click)="toggleChat()">✖</span>
+    </div>
+
+    <div class="chat-body" #chatBody>
+        <div *ngFor="let msg of messages" class="chat-message" [ngClass]="msg.sender">
+            <span *ngIf="!msg.isHtml">{{ msg.text }}</span>
+            <span *ngIf="msg.isHtml" [innerHTML]="msg.text"></span>
+        </div>
+        <div *ngIf="loading" class="chat-message bot">Typing...</div>
+    </div>
+
+    <div class="chat-footer">
+        <input [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Ask something..." />
+        <button (click)="sendMessage()" [disabled]="loading || !userMessage.trim()">Send</button>
+    </div>
+</div>

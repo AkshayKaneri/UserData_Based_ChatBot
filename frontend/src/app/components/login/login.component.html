@@ -1,0 +1,18 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" required />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+            {{ loading ? 'Logging in...' : 'Login' }}
+        </button>
+    </form>
+</div>

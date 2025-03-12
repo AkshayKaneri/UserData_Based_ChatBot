@@ -1,0 +1,9 @@
+<div class="dashboard-container">
+    <h1>Welcome, {{ user?.email }}</h1>
+    <div class="card-grid">
+        <mat-card *ngFor="let card of cards" (click)="navigateTo(card.route)">
+            <mat-card-title>{{ card?.title }}</mat-card-title>
+            <mat-card-content>{{ card?.count }}</mat-card-content>
+        </mat-card>
+    </div>
+</div>

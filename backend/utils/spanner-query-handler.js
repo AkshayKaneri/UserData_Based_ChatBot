@@ -150,28 +150,50 @@ ${JSON.stringify(dbSchema, null, 2)}
 /**
  * 🎯 Convert SQL Data → Human Readable Summary using GPT
  */
+/**
+ * 🎯 Convert SQL Data → Human Readable Summary with Basic Formatting
+ */
 async function convertDataToNaturalLanguage(userQuery, rows) {
     try {
         console.log("🧠 Converting Data into Natural Language...");
 
         const gptPrompt = `
-You are an AI assistant that converts database query results into human-readable responses.
+You are an AI assistant that converts database query results into human-readable responses with **better formatting**.
 
 📌 **User Query:** "${userQuery}"
 
 📌 **Data Retrieved:**
 ${JSON.stringify(rows, null, 2)}
 
-🔹 **Task:** Convert this data into a short, user-friendly summary.
-🔹 **Example Output:** "There are 5 male patients admitted in the last 30 days."
+🔹 **Task:** Format the response neatly with bullet points, bold labels, and line breaks for readability.
+🔹 **Formatting Rules:**
+   - Use **bold labels** (e.g., "**Patient ID:** 1").
+   - Use **line breaks** to separate information clearly.
+   - Use **bullet points (•)** for listing multiple records.
+   - Ensure a **natural, conversational tone**.
+   - Do **not** use Markdown or JSON formatting, only plain text.
 
-Respond in a natural, conversational tone.
+🔹 **Example Output Format:**
+"Here are the details:
+• **Patient ID:** 1  
+  **Name:** John Doe  
+  **Date of Birth:** June 15, 1985  
+  **Gender:** Male  
+  **Admitted on:** February 10, 2024  
+
+• **Patient ID:** 2  
+  **Name:** Jane Smith  
+  **Date of Birth:** September 22, 1990  
+  **Gender:** Female  
+  **Admitted on:** January 15, 2024"  
+
+Ensure that the output **always follows this format** without extra symbols or JSON encoding.
 `;
 
         const gptResponse = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [{ role: "user", content: gptPrompt }],
-            max_tokens: 300,
+            max_tokens: 400,
             temperature: 0.7,
         });
 

@@ -1,0 +1,7 @@
+<div class="treatment-container">
+    <h2>Ongoing Treatment</h2>
+    <p>Status: {{ status }}</p>
+    <button mat-raised-button (click)="startTreatment()" [disabled]="status !== 'Pending'">
+        Start Treatment
+    </button>
+</div>
