@@ -84,16 +84,19 @@ UserData_Based_ChatBot/
    http://localhost:4200
    ```
 
-###🔍 Example Use Case
-	“What was the total spend of user John in the last quarter?”
+## 🔍 Example Use Case
+
+  “What was the total spend of user John in the last quarter?”
   → The chatbot will analyze stored transactional data and provide the answer contextually.
 
-###📌 Tech Stack
-	•	Frontend: Angular
-	•	Backend: Node.js, Express.js
-	•	AI/NLP: OpenAI, LangChain
-	•	Vector DB: Pinecone
+## 📌 Tech Stack
 
-###🤝 Contributing
+•	Frontend: Angular
+•	Backend: Node.js, Express.js
+•	AI/NLP: OpenAI, LangChain
+•	Vector DB: Pinecone
+
+## 🤝 Contributing
+
 Contributions, feedback, and suggestions are welcome. Open an issue or create a pull request!
 📄 License MIT License © 2025 Akshay Kaneri
