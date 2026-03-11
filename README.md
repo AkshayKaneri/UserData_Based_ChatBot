@@ -4,7 +4,7 @@ A Proof of Concept (POC) chatbot that understands and answers queries using **us
 
 ---
 
-## ✨ Features
+## ✨ Features  dssdsdsdsdsdsdsds
 
 - 🔍 Semantic search using vector embeddings
 - 🧾 Custom chatbot trained on user data (transactional)
@@ -100,3 +100,4 @@ UserData_Based_ChatBot/
 
 Contributions, feedback, and suggestions are welcome. Open an issue or create a pull request!
 📄 License MIT License © 2025 Akshay Kaneri
+
